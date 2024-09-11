@@ -1,0 +1,12 @@
+import nltk
+from nltk.corpus import wordnet as wn
+
+# Download WordNet if you haven't already
+nltk.download('wordnet')
+
+# Get synsets for a word
+synsets = wn.synsets('bank')
+
+# Print the synsets and definitions
+for synset in synsets:
+    print(f"Synset: {synset.name()}, Definition: {synset.definition()}")
