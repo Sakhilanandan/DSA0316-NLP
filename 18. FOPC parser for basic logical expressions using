@@ -1,0 +1,17 @@
+import re
+
+def parse_expression(expression):
+    # A very basic FOPC expression parser using regex
+    # Matches atomic predicates like: loves(John, Mary)
+    pattern = r'([a-zA-Z]+)\(([^)]+)\)'
+    matches = re.findall(pattern, expression)
+
+    if matches:
+        for predicate, terms in matches:
+            print(f"Predicate: {predicate}, Terms: {terms.split(', ')}")
+    else:
+        print("Invalid expression")
+
+# Test the parser
+expression = "loves(John, Mary)"
+parse_expression(expression)
