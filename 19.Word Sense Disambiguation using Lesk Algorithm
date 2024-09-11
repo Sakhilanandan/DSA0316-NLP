@@ -1,0 +1,20 @@
+from nltk.wsd import lesk
+from nltk.corpus import wordnet
+from nltk.tokenize import word_tokenize
+
+# Download NLTK resources if necessary
+import nltk
+nltk.download('wordnet')
+nltk.download('punkt')
+
+# Sample sentence
+sentence = "I went to the bank to deposit money."
+
+# Tokenize the sentence
+tokens = word_tokenize(sentence)
+
+# Apply Lesk Algorithm
+sense = lesk(tokens, 'bank')
+
+# Print the sense and its definition
+print(f"Sense: {sense}, Definition: {sense.definition()}")
